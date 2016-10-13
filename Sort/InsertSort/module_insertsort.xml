@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_insertsort" default="compile.module.insertsort">
+  <dirname property="module.insertsort.basedir" file="${ant.file.module_insertsort}"/>
+  
+  <property name="module.jdk.home.insertsort" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.insertsort" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.insertsort" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.insertsort" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="insertsort.output.dir" value="${module.insertsort.basedir}/out/production/InsertSort"/>
+  <property name="insertsort.testoutput.dir" value="${module.insertsort.basedir}/out/test/InsertSort"/>
+  
+  <path id="insertsort.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="insertsort.module.production.classpath">
+    <path refid="${module.jdk.classpath.insertsort}"/>
+  </path>
+  
+  <path id="insertsort.runtime.production.module.classpath">
+    <pathelement location="${insertsort.output.dir}"/>
+  </path>
+  
+  <path id="insertsort.module.classpath">
+    <path refid="${module.jdk.classpath.insertsort}"/>
+    <pathelement location="${insertsort.output.dir}"/>
+  </path>
+  
+  <path id="insertsort.runtime.module.classpath">
+    <pathelement location="${insertsort.testoutput.dir}"/>
+    <pathelement location="${insertsort.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.insertsort">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.insertsort">
+    <patternset refid="excluded.from.module.insertsort"/>
+  </patternset>
+  
+  <path id="insertsort.module.sourcepath">
+    <dirset dir="${module.insertsort.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.insertsort" depends="compile.module.insertsort.production,compile.module.insertsort.tests" description="Compile module InsertSort"/>
+  
+  <target name="compile.module.insertsort.production" depends="register.custom.compilers" description="Compile module InsertSort; production classes">
+    <mkdir dir="${insertsort.output.dir}"/>
+    <javac2 destdir="${insertsort.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.insertsort}/javac">
+      <compilerarg line="${compiler.args.insertsort}"/>
+      <bootclasspath refid="insertsort.module.bootclasspath"/>
+      <classpath refid="insertsort.module.production.classpath"/>
+      <src refid="insertsort.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.insertsort"/>
+    </javac2>
+    
+    <copy todir="${insertsort.output.dir}">
+      <fileset dir="${module.insertsort.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.insertsort.tests" depends="register.custom.compilers,compile.module.insertsort.production" description="compile module InsertSort; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.insertsort" description="cleanup module">
+    <delete dir="${insertsort.output.dir}"/>
+    <delete dir="${insertsort.testoutput.dir}"/>
+  </target>
+</project>
