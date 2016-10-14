@@ -1,16 +1,13 @@
 package insertsort;
 
-import java.text.SimpleDateFormat;
+import insertsort.gui;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class InsertSort {
     public static void main(String a[]) {
-        /* int[] array1 = {50,37,2,157,875,964,804,214}; */
-        //GIT FUNGUJE
 
-        int max = 1000;
+        int max = 100;
         int top = 500;
 
         Date zacatek = new Date();
