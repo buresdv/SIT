@@ -31,8 +31,7 @@ public class InsertSort {
         System.out.println(rozdil + " milisekund");
 
         System.out.println("Pole o délce " + max + " náhodných čísel a maximálním číslu " + top + " bylo seřazeno za " + rozdil + " milisekund");
-
-//
+        
   }
     public static int[] InsertSort(int[] input) {
         int temp;
@@ -48,5 +47,20 @@ public class InsertSort {
             }
         return input;
     }
+
+   /*
+    public static int[] BubbleSort(int[] inputBubble) {
+        for (int i = 0; i < inputBubble.length - 1; i++) {
+            for (int j = 0; j < inputBubble.length - i - 1; j++) {
+                if(inputBubble[j] < inputBubble[j+1]) {
+                    int tmp = inputBubble[j];
+                    inputBubble[j] = inputBubble[j+1];
+                    inputBubble[j+1] = tmp;
+                }
+            }
+        }
+        return inputBubble;
+    }
+    */
 }
 
