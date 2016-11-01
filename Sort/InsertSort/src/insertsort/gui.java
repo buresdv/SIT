@@ -19,6 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,6 +32,10 @@ public class gui extends Application implements Initializable {
 
     @FXML
     private Button exitButton;
+    private Button insertButton;
+    private Button bubbleButton;
+    private Field fieldMax;
+    private Field fieldTop;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {

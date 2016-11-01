@@ -54,12 +54,12 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button id="tlacitkoInput" alignment="CENTER" mnemonicParsing="false" prefHeight="74.0" prefWidth="235.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0;" stylesheets="@stylesheet.css" text="Insert" textFill="#3f51b5" GridPane.rowIndex="2">
+                                    <Button id="tlacitkoInput" fx:id="buttonInsert" alignment="CENTER" mnemonicParsing="false" prefHeight="74.0" prefWidth="235.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0;" stylesheets="@stylesheet.css" text="Insert" textFill="#3f51b5" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Open Sans" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button id="tlacitkoInput" mnemonicParsing="false" prefHeight="80.0" prefWidth="238.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0;" stylesheets="@stylesheet.css" text="Bubble" textFill="#3f51b5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Button id="tlacitkoInput" fx:id="buttonBubble" mnemonicParsing="false" prefHeight="80.0" prefWidth="238.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0;" stylesheets="@stylesheet.css" text="Bubble" textFill="#3f51b5" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Open Sans" size="15.0" />
                                        </font>
@@ -74,7 +74,7 @@
                                           <Font name="Open Sans" size="15.0" />
                                        </font>
                                     </Text>
-                                    <TextField id="InputField" prefHeight="68.0" prefWidth="227.0" style="-fx-background-color: #3F51B5; -fx-border-color: #FFFFFF;" stylesheets="@stylesheet.css" GridPane.columnIndex="1">
+                                    <TextField id="InputField" fx:id="fieldMax" prefHeight="68.0" prefWidth="227.0" style="-fx-background-color: #3F51B5; -fx-border-color: #FFFFFF;" stylesheets="@stylesheet.css" GridPane.columnIndex="1">
                                        <font>
                                           <Font name="Open Sans" size="15.0" />
                                        </font>
