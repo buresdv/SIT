@@ -4,8 +4,12 @@ package insertsort;/**
 
 import insertsort.InsertSort;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,11 +19,32 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class gui extends Application {
+
+public class gui extends Application implements Initializable {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @FXML
+    private Button exitButton;
+
+    @Override
+    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+        assert exitButton != null : "fx:id=\"exitButton\" nebylo vlozeno, zkontroluj FXML soubor 'gui.fxml'.";
+
+        //Tady pokračovat, všechno odtud dolů bylo z XML vloženo
+
+        exitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Platform.exit();
+            }
+        });
+
     }
 
     @Override
@@ -32,6 +57,8 @@ public class gui extends Application {
         primaryStage.setScene(new Scene(mainPane));
         primaryStage.setTitle("Sorting");
         primaryStage.show();
+
+
 
     }
 

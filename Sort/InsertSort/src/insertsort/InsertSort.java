@@ -31,7 +31,7 @@ public class InsertSort {
         System.out.println(rozdil + " milisekund");
 
         System.out.println("Pole o délce " + max + " náhodných čísel a maximálním číslu " + top + " bylo seřazeno za " + rozdil + " milisekund");
-        
+
   }
     public static int[] InsertSort(int[] input) {
         int temp;
