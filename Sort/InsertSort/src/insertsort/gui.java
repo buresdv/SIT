@@ -2,6 +2,7 @@ package insertsort;/**
  * Created by david on 14.10.16.
  */
 
+import insertsort.controller;
 import insertsort.InsertSort;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -24,32 +25,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class gui extends Application implements Initializable {
+public class gui extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    @FXML
-    private Button exitButton;
-    private Button insertButton;
-    private Button bubbleButton;
-    private Field fieldMax;
-    private Field fieldTop;
-
-    @Override
-    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        assert exitButton != null : "fx:id=\"exitButton\" nebylo vlozeno, zkontroluj FXML soubor 'gui.fxml'.";
-
-        //Tady pokračovat, všechno odtud dolů bylo z XML vloženo
-
-        exitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Platform.exit();
-            }
-        });
-
     }
 
     @Override
